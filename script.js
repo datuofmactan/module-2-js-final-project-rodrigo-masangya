@@ -13,9 +13,7 @@ const fishLine = document.getElementById('fishLine');
 const fishPond = document.getElementById('pond');
 const score = document.getElementById('score');
 
-console.log('herex');
-
- class Pond {
+class Pond {
     constructor(){
         this.pondCenter = [245, 245];
         this.pondRadius = 200;
@@ -127,7 +125,6 @@ class Person{
 
     newLinePos(lineOffsetX, lineOffsetY) {
         
-        console.log(lineOffsetX, lineOffsetY, this.personX, this.personY, Math.ceil(Math.sqrt((lineOffsetX - this.personX)**2 + (lineOffsetY - this.personY)**2)));        
         if (Math.ceil(Math.sqrt((lineOffsetX - this.personX)**2 + (lineOffsetY - this.personY)**2) < (this.pondRadius - 3))){
             this.lineX = lineOffsetX + 50;
             this.lineY = lineOffsetY + 50;
@@ -137,7 +134,6 @@ class Person{
     }
 
     gotFish (fishObj) {
-        console.log('here');
         if (Math.ceil(Math.sqrt((this.lineX - fishObj.x)**2 + (this.lineY - fishObj.y)**2) < pond.catchRadius)){
             alert('You caught a fish!');            
             updateScore();
@@ -223,20 +219,16 @@ fishPond.addEventListener('mousedown', function (e) {
 });
 
 playerPos1.addEventListener('mousedown', function (e) {
-    console.log('1');
     movePerson(0);
 });
 
 playerPos2.addEventListener('mousedown', function (e) {
-    console.log('2');
     movePerson(1);
 });
 playerPos3.addEventListener('mousedown', function (e) {
-    console.log('3');
     movePerson(2);
 });
 playerPos4.addEventListener('mousedown', function (e) {
-    console.log('4');
     movePerson(3);
 });
 
